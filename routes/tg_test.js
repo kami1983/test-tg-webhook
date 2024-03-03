@@ -73,7 +73,7 @@ router.all('/tgtest', function(req, res, next) {
   }
   console.log('Response:', response);
 
-  res.json(response);
+  res.send(response);
 
 });
 
@@ -99,7 +99,7 @@ router.all('/', function(req, res, next) {
   }
   console.log('Response:', response);
 
-  res.json(response);
+  res.send(response);
 });
 
 
