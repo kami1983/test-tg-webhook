@@ -3,7 +3,7 @@ var router = express.Router();
 
 require('dotenv').config();
 
-router.all('/tgtest', function(req, res, next) {
+router.all('/', function(req, res, next) {
   
   console.log('----1---- Get --------');
   console.log(req.query);
@@ -75,31 +75,5 @@ router.all('/tgtest', function(req, res, next) {
   res.send(response);
 
 });
-
-router.all('/', function(req, res, next) {
-  
-  console.log('-----2--- Get --------');
-  console.log(req.query);
-
-  console.log('-----2--- Post --------');
-  console.log(req.body);
-
-  const request = req.body;
-  const chat_id = request.message?request.message.chat.id:2137765932;
-  const chat_text = request.message?request.message.text:'';
-  console.log('Chat id:', chat_id);
-  console.log('Chat text:', chat_text);
-
-  const response = {
-    "method": "sendMessage",
-    "chat_id": chat_id,
-    "text": `Yes no need token 2, ${chat_text}`
-  }
-  console.log('Response:', response);
-
-  res.send(response);
-});
-
-
 
 module.exports = router;
