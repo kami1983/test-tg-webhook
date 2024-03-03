@@ -3,7 +3,7 @@ var router = express.Router();
 
 require('dotenv').config();
 
-router.all('/needtoken', function(req, res, next) {
+router.all('/tgtest', function(req, res, next) {
   
   console.log('-------- Get --------');
   console.log(req.query);
