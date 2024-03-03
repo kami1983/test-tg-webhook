@@ -61,7 +61,7 @@ router.all('/tgtest', function(req, res, next) {
   //   res.end('ok');
   // })
 
-  res.send({
+  res.json({
     sendMessage: {
       chat_id: chat_id,
       text: `Yes no need token, ${chat_text}`
