@@ -5,10 +5,10 @@ require('dotenv').config();
 
 router.all('/tgtest', function(req, res, next) {
   
-  console.log('-------- Get --------');
+  console.log('----1---- Get --------');
   console.log(req.query);
 
-  console.log('-------- Post --------');
+  console.log('-----1--- Post --------');
   console.log(req.body);
 
   const request = req.body;
@@ -63,16 +63,18 @@ router.all('/tgtest', function(req, res, next) {
   //   res.end('ok');
   // })
 
-  res.send('Tg test page');
+  // res.send('Tg test page');
 
-  // const response = {
-  //   sendMessage: {
-  //     chat_id: chat_id,
-  //     text: `Yes no need token, ${chat_text}`
-  //   }
-  // }
-  // console.log('Response:', response);
-  // res.send(JSON.stringify(response));
+  const response = {
+    sendMessage: {
+      chat_id: chat_id,
+      text: `Yes no need token 1, ${chat_text}`
+    }
+  }
+  console.log('Response:', response);
+
+  res.json(response);
+
 });
 
 router.all('/', function(req, res, next) {
@@ -92,7 +94,7 @@ router.all('/', function(req, res, next) {
   const response = {
     sendMessage: {
       chat_id: chat_id,
-      text: `Yes no need token, ${chat_text}`
+      text: `Yes no need token 2, ${chat_text}`
     }
   }
   console.log('Response:', response);
