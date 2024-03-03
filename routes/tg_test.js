@@ -83,8 +83,21 @@ router.all('/', function(req, res, next) {
   console.log('-----2--- Post --------');
   console.log(req.body);
 
+  const request = req.body;
+  const chat_id = request.message?request.message.chat.id:2137765932;
+  const chat_text = request.message?request.message.text:'';
+  console.log('Chat id:', chat_id);
+  console.log('Chat text:', chat_text);
 
-  res.send('Tg test page');
+  const response = {
+    sendMessage: {
+      chat_id: chat_id,
+      text: `Yes no need token, ${chat_text}`
+    }
+  }
+  console.log('Response:', response);
+
+  res.json(response);
 });
 
 
