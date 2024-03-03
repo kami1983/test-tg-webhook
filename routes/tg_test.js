@@ -3,7 +3,7 @@ var router = express.Router();
 
 require('dotenv').config();
 
-router.all('/', function(req, res, next) {
+router.all('/needtoken', function(req, res, next) {
   
   console.log('-------- Get --------');
   console.log(req.query);
@@ -63,7 +63,7 @@ router.all('/', function(req, res, next) {
   res.send('Tg test page');
 });
 
-router.all('/notoken', function(req, res, next) {
+router.all('/', function(req, res, next) {
   
   console.log('-------- Get --------');
   console.log(req.query);
